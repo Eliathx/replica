@@ -124,7 +124,7 @@ public class GameGUI implements ActionListener {
         }
         currentButton.setEnabled(false);
         currentButton.setText(board.getValueofSquare(currentButtonY, currentButtonX));
-        //alreadyCheckedPositions.add(new Coordinate(currentButtonX,currentButtonY));
+        
         if (board.getSquares()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() != 0 &&
                 deepContainsCoord(alreadyCheckedPositions, new Coordinate(currentButtonX, currentButtonY))) {
             alreadyCheckedPositions.add(new Coordinate(currentButtonX, currentButtonY));
