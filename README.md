@@ -3,3 +3,4 @@ This repository is dedicated to showcase replicas/copies of other work made by m
 >What I cannot create, I do not understand — Richard Feynman.
 
 <h2>Index</h2>
+<ul>Minesweeper</ul>
