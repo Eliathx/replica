@@ -4,5 +4,5 @@ This repository is dedicated to showcase replicas/copies of other work made by m
 ## Index
 <li>Minesweeper</li>
 
-<h2>Programming languages<h2>
+<h2>Programming languages</h2>
 ![im0](https://user-images.githubusercontent.com/67605537/194677003-ec19e183-47b4-4e20-a224-ab3feb2393a9.png)
