@@ -2,7 +2,7 @@
 This repository is dedicated to showcase replicas/copies of other work made by myself for learning purposes.
 >What I cannot create, I do not understand — Richard Feynman.
 ## Index
-<li>Minesweeper</li>
+[Minesweeper](https://github.com/Eliathx/replica/tree/main/minesweeper)
 
 <h2>Programming languages</h2>
 
