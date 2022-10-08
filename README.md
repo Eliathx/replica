@@ -5,5 +5,4 @@ This repository is dedicated to showcase replicas/copies of other work made by m
 <li>Minesweeper</li>
 
 <h2>Programming languages<h2>
-  ![Java]([http://url/to/img.png](https://user-images.githubusercontent.com/67605537/194676792-5711a7a0-abba-4384-9a62-50aa03623b41.png))
-
+![im0](https://user-images.githubusercontent.com/67605537/194677003-ec19e183-47b4-4e20-a224-ab3feb2393a9.png)
