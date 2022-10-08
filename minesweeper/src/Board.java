@@ -1,19 +1,21 @@
 import java.util.*;
 
 public class Board {
-    public static final int SIZE = 10;
-    public static final int AMOUNT_OF_MINES = 9;
-    private static final Square[][] squares = new Square[SIZE][SIZE];
+    public  int size;
+    public int amountOfMines;
+    private final Square[][] squares = new Square[size][size];
 
-    public Board() {
+    public Board(int size, int amountOfMines) {
+        this.size = size;
+        this.amountOfMines = amountOfMines;
         //Fill the squares that have mines
         ArrayList<Integer[]> alreadyUsedPositions = new ArrayList<>();
-        if (AMOUNT_OF_MINES >= (SIZE * SIZE)) {
+        if (amountOfMines >= (size * size)) {
             System.out.println("Higher number of mines than squares");
         } else {
-            for (int i = 0; i < AMOUNT_OF_MINES; i++) {
-                int x = (int) (Math.random() * SIZE);
-                int y = (int) (Math.random() * SIZE);
+            for (int i = 0; i < amountOfMines; i++) {
+                int x = (int) (Math.random() * size);
+                int y = (int) (Math.random() * size);
                 if (deepContains(alreadyUsedPositions, new Integer[]{x, y})) {
                     i -= 1;
                     //System.out.println("Error");
@@ -26,14 +28,14 @@ public class Board {
         }
 
         //Fill in the other blank squares
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (squares[i][j] == null) {
                     squares[i][j] = new Square();
                 }
             }
         }
-        for (int i = 0; i < AMOUNT_OF_MINES; i++) {
+        for (int i = 0; i < amountOfMines; i++) {
             checkAdjacentTiles(alreadyUsedPositions.get(i)[1], alreadyUsedPositions.get(i)[0]);
 
         }
@@ -52,10 +54,10 @@ public class Board {
     //Looking at adjacent tiles
     public void checkAdjacentTiles(int YpositionToCheck, int XpositionToCheck) {
 
-        for (int dx = (YpositionToCheck > 0 ? -1 : 0); dx <= (YpositionToCheck < SIZE - 1 ? 1 : 0);
+        for (int dx = (YpositionToCheck > 0 ? -1 : 0); dx <= (YpositionToCheck < size - 1 ? 1 : 0);
              ++dx) {
             for (int dy = (XpositionToCheck > 0 ? -1 : 0);
-                 dy <= (XpositionToCheck < SIZE - 1 ? 1 : 0); ++dy) {
+                 dy <= (XpositionToCheck < size - 1 ? 1 : 0); ++dy) {
                 if (dx != 0 || dy != 0) {
                     squares[YpositionToCheck + dx][XpositionToCheck + dy].addAmountOfAdjacentMines();
                 }
@@ -64,7 +66,7 @@ public class Board {
 
     }
     public int getSize(){
-        return SIZE;
+        return size;
     }
     public String getValueofSquare(int i, int j){
         return ""+squares[i][j];
@@ -74,7 +76,12 @@ public class Board {
         return Arrays.deepToString(squares).replace("], ", "]\n").replace("[[", "[").replace("]]", "]");
     }
 
+    public void setSettings(int size, int amountOfMines) {
+        this.size = size;
+        this.amountOfMines = amountOfMines;
+    }
     public Square[][] getSquares() {
         return squares;
     }
+
 }
