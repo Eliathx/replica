@@ -1,0 +1,100 @@
+body {
+    background-color: #161618;
+
+}
+
+* {
+    font-family: "Montserrat", "Inter", sans-serif;
+    font-weight: 700;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+}
+.view-more-button{
+    background-color: #222225;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 8px;
+}
+.sidebar {
+    background-color: #222225;
+    width: 140px;
+    height: 530px;
+    padding: 50px;
+    position: absolute;
+    left: 150px;
+    top: 18px;
+    border-radius: 6px;
+}
+
+.top-menu {
+    position: absolute;
+    left: 425px;
+    top: 18px;
+    width: 750px;
+}
+
+.currentMatchesBar {
+    width: 640px;
+    display: flex;
+    white-space: nowrap;
+    overflow-x: hidden;
+
+}
+
+.currentMatchCard {
+    cursor: pointer;
+    background-color: #222225;
+    
+    border-radius: 6px;
+    padding: 8px;
+    margin-right: 8px;
+    border: none;
+
+}
+
+.signIn {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: none;
+
+    background-color: #925fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+
+    font-style: normal;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+
+}
+
+.latest-news {
+    position: absolute;
+    top: 80px;
+    left: 427px;
+    width: 750px;
+
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+
+.big-news-post {
+    height: 430px;
+    width: 745px;
+    
+    background-color: rgb(136, 158, 151);
+}
+
+.small-news-post {
+    width:360px;
+   
+    background-color: #64565a;
+}
