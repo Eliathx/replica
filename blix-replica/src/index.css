@@ -12,13 +12,26 @@ body {
 ul {
     list-style-type: none;
 }
-.view-more-button{
+
+.content {
+    position: absolute;
+    top: 80px;
+    left: 427px;
+    /*border-style: solid;
+    border-color: #925fff;*/
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.view-more-button {
     background-color: #222225;
     border: none;
     cursor: pointer;
     border-radius: 6px;
     padding: 8px;
 }
+
 .sidebar {
     background-color: #222225;
     width: 140px;
@@ -48,7 +61,7 @@ ul {
 .currentMatchCard {
     cursor: pointer;
     background-color: #222225;
-    
+
     border-radius: 6px;
     padding: 8px;
     margin-right: 8px;
@@ -75,9 +88,9 @@ ul {
 }
 
 .latest-news {
-    position: absolute;
+    /*position: absolute;
     top: 80px;
-    left: 427px;
+    left: 427px;*/
     width: 750px;
 
     display: flex;
@@ -89,12 +102,38 @@ ul {
 .big-news-post {
     height: 430px;
     width: 745px;
-    
+
     background-color: rgb(136, 158, 151);
 }
 
 .small-news-post {
-    width:360px;
-   
+    width: 363px;
     background-color: #64565a;
+}
+.news-board{
+    width: 745px;
+    
+    border-radius: 6px;
+    margin-right: 8px;
+    margin-bottom: 10px;
+}
+.board-tab{
+    width: 745px;
+    display: flex;
+    
+    margin-bottom: 5px;
+    border-radius: 6px 3px;
+    background-color: #222225;
+    
+}
+.news-board-content{
+    padding: 8px;
+    background-color: #222225;
+    
+}
+.tab{
+    margin-right: 8px;
+    padding: 8px;
+    
+    
 }

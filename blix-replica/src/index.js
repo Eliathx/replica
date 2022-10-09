@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './scrollbar.css'
+import Content from './content.js'
 
 const root = ReactDOM.createRoot(document.getElementById("root"))
 
@@ -58,38 +59,11 @@ function SideBar() {
     </div>
 }
 
-function BigNewsPost(props){
-    return <div className='big-news-post'>
-        <h2>{props.title}</h2>
-        <h2>{props.author}</h2>
-    </div>
-}
-function SmallerNewsPost(props){
-    return <div className='small-news-post'>
-         <h2>{props.title}</h2>
-        <h2>{props.author}</h2>
-    </div>
-}
-
-function ViewMoreButton(props){
-    return <button className='view-more-button'>View more {props.section}</button>
-}
-function LatestNews() {
-    return <div className='latest-news'>
-      <BigNewsPost title="Hola" author="Test name 1"/>
-
-      <SmallerNewsPost title="Hola" author="Author 2"/>
-      <SmallerNewsPost title="Hola2" author="Author 3"/>
-      
-    </div>
-}
 root.render(
     <div>
         <TopDiv />
         <SideBar />
-        <LatestNews />
-        <ViewMoreButton section="Articles"/>
-        
-        
+        <Content />
+
     </div>
 )
