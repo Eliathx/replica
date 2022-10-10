@@ -1,0 +1,15 @@
+.news-card-date{
+    color:#656567;
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+.icon{
+    vertical-align: text-top;
+    
+}
+.news-card{
+    
+    box-shadow: 0 4px 2px -2px #1d1d1f;
+    padding: 12px;
+}

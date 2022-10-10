@@ -8,7 +8,7 @@ body {
 }
 
 * {
-    font-family: "Montserrat", "Inter", sans-serif;
+    font-family: "Inter",sans-serif;
     font-weight: 700;
     color: white;
 }
@@ -138,11 +138,20 @@ ul {
     flex-direction: column;
    
 }
-
+.game-icon{
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    object-fit: cover;
+    opacity: 0.7;
+    margin-right: 8px;
+    margin-bottom: 10px;
+    vertical-align: text-top; 
+}
 .tab{
     margin-right: 8px;
     padding: 8px;
-
+    cursor: pointer;
 }
 .collapsible-button{
     background-color: #222225;
@@ -151,6 +160,7 @@ ul {
     padding: 8px;
     width: 100%;
     text-align: justify;
+    cursor: pointer;
     
 }
 .collapsible-content{
@@ -163,12 +173,13 @@ ul {
 .match-card{
    background-color: #2f2f32; 
    padding: 13px;
- 
+   cursor: pointer;
+   
    margin: 10px
    
 }
+
 .tournament-card{
- 
    padding: 13px;
    box-shadow: 0 4px 2px -2px #1d1d1f;
    margin: 10px
