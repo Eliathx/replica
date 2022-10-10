@@ -1,4 +1,5 @@
 import React from "react";
+import { InnerViewMoreButton} from "./content";
 function NewsBoard(){
 return <div className="news-board">
     
@@ -12,6 +13,7 @@ return <div className="news-board">
       <NewsCard title="Title test2" date="today"/>
       <NewsCard title="Title test3" date="today"/>
       <NewsCard title="Title test4" date="today"/>
+      <InnerViewMoreButton section="all News"/>
     </div>
     
 </div>
@@ -26,3 +28,4 @@ function Tab(props){
     return <div className="tab">{props.page}</div>
 }
 export default NewsBoard
+export{Tab}
