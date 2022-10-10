@@ -21,8 +21,7 @@ ul {
     position: absolute;
     top: 80px;
     left: 427px;
-    /*border-style: solid;
-    border-color: #925fff;*/
+   
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -42,16 +41,7 @@ ul {
     border-radius: 6px;
     padding: 4px;
 }
-.sidebar {
-    background-color: #222225;
-    width: 140px;
-    height: 530px;
-    padding: 50px;
-    position: fixed;
-    left: 150px;
-    top: 18px;
-    border-radius: 6px;
-}
+
 
 .top-menu {
     position: absolute;
@@ -108,20 +98,23 @@ ul {
 .big-news-post {
     height: 430px;
     width: 745px;
-
-    background-color: rgb(136, 158, 151);
+    /*
+    background-image:  linear-gradient(0deg, rgba(0,0,0,0.7399334733893557) 0%, rgba(9,9,121,0) 35%, rgba(0,212,255,0) 100%),url("https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Overwatch2WatchpointPack.jpg");
+    */
+    background-size: cover;
+    border-radius: 6px;
 }
 
 .small-news-post {
+    background-size: cover;
     width: 363px;
-    background-color: #64565a;
+    height: 205px;
+    border-radius: 6px;
 }
 .news-board{   
     display: flex;
     flex-direction:  column;
-    
     border-radius: 6px;
-    
     margin-bottom: 10px;
 }
 .board-tab{
