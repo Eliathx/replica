@@ -6,14 +6,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GameGUI implements ActionListener {
-    private Board board;
+    private Board board = new Board();
     private final ArrayList<Coordinate> alreadyCheckedPositions = new ArrayList<>();
     private final JFrame frame = new JFrame("Test");
     JButton[][] buttonsArray = new JButton[board.getSize()][board.getSize()];
-    JButton settingsButton = new JButton("🔧");
+    JButton settingsButton = new JButton("Set");
 
-    public GameGUI(Board board) {
-        this.board=board;
+    public GameGUI() {
+        
         settingsButton.addActionListener(this);
 
         JSplitPane splitPane = new JSplitPane();
@@ -66,11 +66,7 @@ public class GameGUI implements ActionListener {
 
     }
 
-    public GameGUI() {
-        board = new Board(10,10);
-        new GameGUI(board);
-
-    }
+    
 
     public Coordinate createButtonCoords(Object botonFuente) {
 

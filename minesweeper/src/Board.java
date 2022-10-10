@@ -1,13 +1,12 @@
 import java.util.*;
 
 public class Board {
-    public  int size;
-    public int amountOfMines;
+    public  int size = 10;
+    public int amountOfMines =10;
     private final Square[][] squares = new Square[size][size];
 
-    public Board(int size, int amountOfMines) {
-        this.size = size;
-        this.amountOfMines = amountOfMines;
+    public Board() {
+       
         //Fill the squares that have mines
         ArrayList<Integer[]> alreadyUsedPositions = new ArrayList<>();
         if (amountOfMines >= (size * size)) {

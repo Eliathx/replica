@@ -1,6 +1,6 @@
 .sidebar {
     width: 240px;
-    height: 530px;
+   
 
     background-color: #222225;
     
@@ -16,4 +16,9 @@
 .logoBox{
     padding: 20px 20px 15px 20px;
     box-shadow: 0 4px 2px -2px #1d1d1f;
+}
+.sidebar-element{
+    border-right: solid 3px #925fff;
+    cursor: pointer;
+    padding: 6px;
 }

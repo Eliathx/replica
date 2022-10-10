@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SettingsFrame implements ActionListener {
-    private GameGUI gameGUI = new GameGUI();
+   
     private JTextField mineAmountInput = new JTextField(2);
     private JTextField boardSizeInput = new JTextField(2);
     private JButton saveButton = new JButton("Save");
@@ -31,7 +31,6 @@ public class SettingsFrame implements ActionListener {
         if(e.getSource()==saveButton){
           //  Integer.parseInt(boardSizeInput.getText(), Integer.parseInt(mineAmountInput.getText()))
 
-            new GameGUI(new Board(3,5));
         }
     }
 }

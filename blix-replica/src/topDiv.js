@@ -1,15 +1,21 @@
 import React from "react";
+import IconImg from './iconImg.js'
 function CurrentMatchesBar() {
 
     return <div className='currentMatchesBar'>
-        <button className='currentMatchCard'>LOREM TEAM1 vs TEAM2</button>
-        <button className='currentMatchCard'>TEAM3 vs TEAM4</button>
-        <button className='currentMatchCard'>TEAM3 vs TEAM4</button>
-        <button className='currentMatchCard'>TEAM3 vs TEAM4</button>
-        <button className='currentMatchCard'>TEAM3 vs TEAM4</button>
-        <button className='currentMatchCard'>TEAM3 vs TEAM4</button>
+       <CurrentMatchCard team1="CGN" team2="Dsyre"/>
+       <CurrentMatchCard team1="DRX" team2="FURIA"/>
+       <CurrentMatchCard team1="T1" team2="XSET"/>
+       <CurrentMatchCard team1="GUILD" team2="NAVI"/>
     </div>
 }
+
+function CurrentMatchCard(props){
+    return <button className='currentMatchCard'><IconImg gameName={props.team1}/>
+    &nbsp;&nbsp;vs&nbsp;&nbsp; 
+    <IconImg gameName={props.team2} /></button>
+}
+
 function TopDiv() {
     return <div className='top-menu'>
         <CurrentMatchesBar />

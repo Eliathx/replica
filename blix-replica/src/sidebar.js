@@ -1,7 +1,7 @@
 import React from "react";
 import './sidebar.css'
-import GameIconImg from './gameIconImg.js'
-import { IconsHashmap } from './gameIconImg.js'
+import IconImg from './iconImg.js'
+
 function SideBar() {
 
 
@@ -26,34 +26,34 @@ function SideBar() {
         </ul>
         <ul className='gamesMenu'>
             <li className='sidebar-element'>
-                <GameIconImg gameName='CS:GO' />CS:GO
+                <IconImg gameName='CS:GO' />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName='Valorant' />Valorant
+                <IconImg gameName='Valorant' />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName='Dota2' />Dota 2
+                <IconImg gameName='Dota 2' />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName='LoL' />League of Legends
+                <IconImg gameName='League of Legends' />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName='R6' />Rainbow 6
+                <IconImg gameName='Rainbow 6' />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName="Industry" />Industry
+                <IconImg gameName="Industry" />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName='RL' />Rocket League
+                <IconImg gameName='Rocket League' />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName="FF" />Free Fire
+                <IconImg gameName="Free Fire" />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName="GWENT" />GWENT
+                <IconImg gameName="GWENT" />
             </li>
             <li className='sidebar-element'>
-                <GameIconImg gameName="Games" />Games
+                <IconImg gameName="Games" />
             </li>
         </ul>
     </div>
