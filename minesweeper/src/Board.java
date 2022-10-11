@@ -1,16 +1,16 @@
 import java.util.*;
 
 public class Board {
-    public  int size = 10;
-    public int amountOfMines =10;
-    private final Square[][] squares = new Square[size][size];
+    public int size = 10;
+    public int amountOfMines = 1;
+    private int amountOfCheckedTiles = 0;
+    private final Tile[][] tiles = new Tile[size][size];
 
     public Board() {
-       
-        //Fill the squares that have mines
+        //Fill the tiles that will have mines
         ArrayList<Integer[]> alreadyUsedPositions = new ArrayList<>();
         if (amountOfMines >= (size * size)) {
-            System.out.println("Higher number of mines than squares");
+            System.out.println("Higher number of mines than tiles");
         } else {
             for (int i = 0; i < amountOfMines; i++) {
                 int x = (int) (Math.random() * size);
@@ -19,18 +19,18 @@ public class Board {
                     i -= 1;
                     //System.out.println("Error");
                 } else {
-                    squares[y][x] = new Square(new Mine());
+                    tiles[y][x] = new Tile(new Mine());
                     alreadyUsedPositions.add(new Integer[]{x, y});
                 }
             }
-           
+
         }
 
-        //Fill in the other blank squares
+        //Fill in the other blank tiles
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if (squares[i][j] == null) {
-                    squares[i][j] = new Square();
+                if (tiles[i][j] == null) {
+                    tiles[i][j] = new Tile();
                 }
             }
         }
@@ -58,29 +58,43 @@ public class Board {
             for (int dy = (XpositionToCheck > 0 ? -1 : 0);
                  dy <= (XpositionToCheck < size - 1 ? 1 : 0); ++dy) {
                 if (dx != 0 || dy != 0) {
-                    squares[YpositionToCheck + dx][XpositionToCheck + dy].addAmountOfAdjacentMines();
+                    tiles[YpositionToCheck + dx][XpositionToCheck + dy].addAmountOfAdjacentMines();
                 }
             }
         }
 
     }
-    public int getSize(){
+
+    public int getSize() {
         return size;
     }
-    public String getValueofSquare(int i, int j){
-        return ""+squares[i][j];
+
+    public int getAmountOfMines() {
+        return amountOfMines;
+    }
+
+    public String getValueofTile(int i, int j) {
+        return "" + tiles[i][j];
+    }
+    public void setTileAsChecked(int i, int j) {
+        tiles[i][j].checked = true;
+        amountOfCheckedTiles++;
+    }
+    public int getAmountOfCheckedTiles(){
+        return amountOfCheckedTiles;
     }
     @Override
     public String toString() {
-        return Arrays.deepToString(squares).replace("], ", "]\n").replace("[[", "[").replace("]]", "]");
+        return Arrays.deepToString(tiles).replace("], ", "]\n").replace("[[", "[").replace("]]", "]");
     }
 
-    public void setSettings(int size, int amountOfMines) {
+    /*public void setSettings(int size, int amountOfMines) {
         this.size = size;
         this.amountOfMines = amountOfMines;
-    }
-    public Square[][] getSquares() {
-        return squares;
+    }*/
+
+    public Tile[][] getTiles() {
+        return tiles;
     }
 
 }

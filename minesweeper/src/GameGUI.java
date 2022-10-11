@@ -3,18 +3,20 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class GameGUI implements ActionListener {
-    private Board board = new Board();
+    private final Board board = new Board();
     private final ArrayList<Coordinate> alreadyCheckedPositions = new ArrayList<>();
-    private final JFrame frame = new JFrame("Test");
-    JButton[][] buttonsArray = new JButton[board.getSize()][board.getSize()];
-    JButton settingsButton = new JButton("Set");
+    private final JFrame frame = new JFrame("Minesweeper");
+    private final JButton[][] buttonsArray = new JButton[board.getSize()][board.getSize()];
+    private final JButton restartButton = new JButton("↻");
 
     public GameGUI() {
-        
-        settingsButton.addActionListener(this);
+        //Setting frame icon
+        ImageIcon iconImg = new ImageIcon("minesweeper/src/minesweeper-frame-icon.png");
+        frame.setIconImage(iconImg.getImage());
+
+        restartButton.addActionListener(this);
 
         JSplitPane splitPane = new JSplitPane();
         frame.add(splitPane);
@@ -25,12 +27,12 @@ public class GameGUI implements ActionListener {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new GridBagLayout());
 
-        JLabel label1 = new JLabel("Lorem");
+        JLabel label1 = new JLabel("Size: " + board.getSize() + " x " + board.getSize());
         topPanel.add(label1);
-        JLabel label2 = new JLabel(" Ipsum");
+        JLabel label2 = new JLabel(" | Mines: " + board.getAmountOfMines() + "   ");
         topPanel.add(label2);
 
-        topPanel.add(settingsButton);
+        topPanel.add(restartButton);
 
         JPanel gamePanel = new JPanel();
         gamePanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -47,6 +49,7 @@ public class GameGUI implements ActionListener {
             for (int j = 0; j < board.getSize(); j++) {
                 JButton button = new JButton();
                 button.addActionListener(this);
+                //Add or remove flag to a tile
                 button.addMouseListener(new MouseAdapter() {
                     public void mouseClicked(MouseEvent e) {
                         if (e.getButton() == MouseEvent.BUTTON3 && button.isEnabled()) {
@@ -63,16 +66,14 @@ public class GameGUI implements ActionListener {
             }
         }
         frame.setVisible(true);
-
     }
 
-    
 
-    public Coordinate createButtonCoords(Object botonFuente) {
+    public Coordinate createButtonCoords(Object sourceButton) {
 
         for (int i = 0; i < board.getSize(); i++) {
             for (int j = 0; j < board.getSize(); j++) {
-                if (buttonsArray[i][j] == botonFuente) {
+                if (buttonsArray[i][j] == sourceButton) {
                     return new Coordinate(j, i);
                 }
             }
@@ -89,10 +90,11 @@ public class GameGUI implements ActionListener {
         return false;
     }
 
-    public void disableAdjacentSquares(int y, int x) {
+    public void disableAdjacentTiles(int y, int x) {
         int[] dr = {-1, 1, 0, 0};
         int[] dc = {0, 0, 1, -1};
         alreadyCheckedPositions.add(new Coordinate(x, y));
+
         for (int i = 0; i < 4; i++) {
             if (y + dr[i] < 0 || x + dc[i] < 0 || y + dr[i] >= board.getSize() || x + dc[i] >= board.getSize()) {
                 continue;
@@ -100,58 +102,63 @@ public class GameGUI implements ActionListener {
             int newY = y + dr[i];
             int newX = x + dc[i];
             buttonsArray[newY][newX].setEnabled(false);
-            buttonsArray[newY][newX].setText(board.getValueofSquare(newY, newX));
+            buttonsArray[newY][newX].setText(board.getValueofTile(newY, newX));
+
+
 
             if ((!deepContainsCoord(alreadyCheckedPositions, new Coordinate(newX, newY))
-                    && board.getSquares()[newY][newX].getAmountOfAdjacentMines() == 0)) {
+                    && board.getTiles()[newY][newX].getAmountOfAdjacentMines() == 0)) {
                 alreadyCheckedPositions.add(new Coordinate(newX, newY));
-                disableAdjacentSquares(newY, newX);
-            } else {
-                System.out.println("HII");
+                disableAdjacentTiles(newY, newX);
+
             }
+        }
+    }
+    private void checkForEmptyTile(int currentButtonY, int currentButtonX) {
+        if (board.getTiles()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() != 0 &&
+                deepContainsCoord(alreadyCheckedPositions, new Coordinate(currentButtonX, currentButtonY))) {
+            alreadyCheckedPositions.add(new Coordinate(currentButtonX, currentButtonY));
 
         }
-        System.out.println(Arrays.deepToString(alreadyCheckedPositions.toArray()));
-    }
+        if (board.getTiles()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() == 0) {
+            disableAdjacentTiles(currentButtonY, currentButtonX);
 
+        }
+    }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == settingsButton){
+        if (e.getSource() == restartButton) {
             frame.setVisible(false);
-            new SettingsFrame();
-        }else{
+            new GameGUI();
+        } else {
             int currentButtonY = createButtonCoords(e.getSource()).getY();
             int currentButtonX = createButtonCoords(e.getSource()).getX();
 
             JButton currentButton = buttonsArray[currentButtonY][currentButtonX];
-            if (board.getSquares()[currentButtonY][currentButtonX].hasMine()) {
-                for (int i = 0; i < board.getSquares().length; i++) {
-                    for (int j = 0; j < board.getSquares().length; j++) {
-                        buttonsArray[i][j].setEnabled(false);
-                        buttonsArray[i][j].setText(board.getValueofSquare(i, j));
-                    }
-                }
+
+            if (board.getTiles()[currentButtonY][currentButtonX].hasMine()||alreadyCheckedPositions.size()== (board.getSize()*board.getSize())- board.getAmountOfMines()) {
+                endGame();
+
             }
             currentButton.setEnabled(false);
-            currentButton.setText(board.getValueofSquare(currentButtonY, currentButtonX));
+            currentButton.setText(board.getValueofTile(currentButtonY, currentButtonX));
+            board.setTileAsChecked(currentButtonY, currentButtonX);
 
-            if (board.getSquares()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() != 0 &&
-                    deepContainsCoord(alreadyCheckedPositions, new Coordinate(currentButtonX, currentButtonY))) {
-                alreadyCheckedPositions.add(new Coordinate(currentButtonX, currentButtonY));
-                System.out.println(Arrays.deepToString(alreadyCheckedPositions.toArray()));
-            }
-            if (board.getSquares()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() == 0) {
-
-                disableAdjacentSquares(currentButtonY, currentButtonX);
-            }
-
-
+            checkForEmptyTile(currentButtonY, currentButtonX);
+            System.out.println(alreadyCheckedPositions.size());
         }
+    }
 
+    private void endGame() {
+        for (int i = 0; i < board.getTiles().length; i++) {
+            for (int j = 0; j < board.getTiles().length; j++) {
+                buttonsArray[i][j].setEnabled(false);
+                buttonsArray[i][j].setText(board.getValueofTile(i, j));
+            }
+        }
     }
-    public Board getBoard(){
-        return board;
-    }
+
+
     public static void main(String[] args) {
         new GameGUI();
     }
