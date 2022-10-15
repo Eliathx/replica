@@ -4,6 +4,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+/*
+ * Minesweeper by Eliath Velasco
+ * https://github.com/Eliathx/replica/tree/main/minesweeper
+ * */
+
 public class GameGUI implements ActionListener {
     private final Board board = new Board();
     private final ArrayList<Coordinate> alreadyCheckedPositions = new ArrayList<>();
@@ -66,6 +71,7 @@ public class GameGUI implements ActionListener {
             }
         }
         frame.setVisible(true);
+
     }
 
 
@@ -93,7 +99,6 @@ public class GameGUI implements ActionListener {
     public void disableAdjacentTiles(int y, int x) {
         int[] dr = {-1, 1, 0, 0};
         int[] dc = {0, 0, 1, -1};
-        alreadyCheckedPositions.add(new Coordinate(x, y));
 
         for (int i = 0; i < 4; i++) {
             if (y + dr[i] < 0 || x + dc[i] < 0 || y + dr[i] >= board.getSize() || x + dc[i] >= board.getSize()) {
@@ -104,19 +109,17 @@ public class GameGUI implements ActionListener {
             buttonsArray[newY][newX].setEnabled(false);
             buttonsArray[newY][newX].setText(board.getValueofTile(newY, newX));
 
-
-
-            if ((!deepContainsCoord(alreadyCheckedPositions, new Coordinate(newX, newY))
-                    && board.getTiles()[newY][newX].getAmountOfAdjacentMines() == 0)) {
+            if (!deepContainsCoord(alreadyCheckedPositions, new Coordinate(newX, newY))) {
                 alreadyCheckedPositions.add(new Coordinate(newX, newY));
-                disableAdjacentTiles(newY, newX);
-
+                if (board.getTiles()[newY][newX].getAmountOfAdjacentMines() == 0) {
+                    disableAdjacentTiles(newY, newX);
+                }
             }
         }
     }
+
     private void checkForEmptyTile(int currentButtonY, int currentButtonX) {
-        if (board.getTiles()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() != 0 &&
-                deepContainsCoord(alreadyCheckedPositions, new Coordinate(currentButtonX, currentButtonY))) {
+        if (board.getTiles()[currentButtonY][currentButtonX].getAmountOfAdjacentMines() != 0 && !deepContainsCoord(alreadyCheckedPositions, new Coordinate(currentButtonX, currentButtonY))) {
             alreadyCheckedPositions.add(new Coordinate(currentButtonX, currentButtonY));
 
         }
@@ -125,6 +128,7 @@ public class GameGUI implements ActionListener {
 
         }
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == restartButton) {
@@ -136,16 +140,17 @@ public class GameGUI implements ActionListener {
 
             JButton currentButton = buttonsArray[currentButtonY][currentButtonX];
 
-            if (board.getTiles()[currentButtonY][currentButtonX].hasMine()||alreadyCheckedPositions.size()== (board.getSize()*board.getSize())- board.getAmountOfMines()) {
+            //Show mines positions when either a mine is clicked or there are no more clickable tiles.
+            if (board.getTiles()[currentButtonY][currentButtonX].hasMine() ||
+                    alreadyCheckedPositions.size() >= (board.getSize() * board.getSize()) - (board.getAmountOfMines() + 1)) {
                 endGame();
 
             }
             currentButton.setEnabled(false);
             currentButton.setText(board.getValueofTile(currentButtonY, currentButtonX));
-            board.setTileAsChecked(currentButtonY, currentButtonX);
 
             checkForEmptyTile(currentButtonY, currentButtonX);
-            System.out.println(alreadyCheckedPositions.size());
+
         }
     }
 

@@ -1,7 +1,6 @@
 public class Tile {
     private Mine mine;
     private int amountOfAdjacentMines = 0;
-    public boolean checked;
 
     public Tile(Mine mine) {
         this.mine = mine;
@@ -22,9 +21,6 @@ public class Tile {
         return mine != null;
     }
 
-
-
-    
     @Override
     public String toString() {
         //No mine

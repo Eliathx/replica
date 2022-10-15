@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Board {
     public int size = 10;
-    public int amountOfMines = 1;
-    private int amountOfCheckedTiles = 0;
+    public int amountOfMines = 15;
+
     private final Tile[][] tiles = new Tile[size][size];
 
     public Board() {
@@ -52,7 +52,6 @@ public class Board {
 
     //Looking at adjacent tiles
     public void checkAdjacentTiles(int YpositionToCheck, int XpositionToCheck) {
-
         for (int dx = (YpositionToCheck > 0 ? -1 : 0); dx <= (YpositionToCheck < size - 1 ? 1 : 0);
              ++dx) {
             for (int dy = (XpositionToCheck > 0 ? -1 : 0);
@@ -76,13 +75,7 @@ public class Board {
     public String getValueofTile(int i, int j) {
         return "" + tiles[i][j];
     }
-    public void setTileAsChecked(int i, int j) {
-        tiles[i][j].checked = true;
-        amountOfCheckedTiles++;
-    }
-    public int getAmountOfCheckedTiles(){
-        return amountOfCheckedTiles;
-    }
+
     @Override
     public String toString() {
         return Arrays.deepToString(tiles).replace("], ", "]\n").replace("[[", "[").replace("]]", "]");
@@ -92,7 +85,6 @@ public class Board {
         this.size = size;
         this.amountOfMines = amountOfMines;
     }*/
-
     public Tile[][] getTiles() {
         return tiles;
     }
