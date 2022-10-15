@@ -1,0 +1,24 @@
+.content {
+    position: absolute;
+    top: 80px;
+    left: 427px;
+
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.view-more-button {
+    background-color: var(--secondary-bg-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+.inner-view-more-button {
+    background-color: #2f2f32;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding: 4px;
+}

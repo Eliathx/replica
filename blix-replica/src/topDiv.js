@@ -1,5 +1,7 @@
 import React from "react";
 import IconImg from './iconImg.js'
+import "./topDiv.css";
+
 function CurrentMatchesBar() {
 
     return <div className='currentMatchesBar'>

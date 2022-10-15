@@ -1,15 +1,19 @@
-:root{
-    --primary-bg-color:#161618;
+:root {
+    --primary-bg-color: #161618;
     --secondary-bg-color: #222225;
+
+    --primary-text-color: white;
+    --secondary-text-color: #656567;
 }
+
 body {
     background-color: var(--primary-bg-color);
-
 }
 
 * {
-    font-family: "Inter",sans-serif;
-    font-weight: 700;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
     color: white;
 }
 
@@ -17,158 +21,39 @@ ul {
     list-style-type: none;
 }
 
-.content {
-    position: absolute;
-    top: 80px;
-    left: 427px;
-   
-    gap: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.view-more-button {
-    background-color:var(--secondary-bg-color);
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: 8px;
-}
-.inner-view-more-button {
-    background-color: #2f2f32;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    padding: 4px;
-}
-
-
-.top-menu {
-    position: absolute;
-    left: 425px;
-    top: 18px;
-    width: 750px;
-}
-
-.currentMatchesBar {
-    width: 640px;
-    display: flex;
-    white-space: nowrap;
-    overflow-x: hidden;
-
-}
-
-.currentMatchCard {
-    cursor: pointer;
-    background-color: #222225;
-    display: flex;
-    flex-direction: row;
-    border-radius: 6px;
-    padding: 8px;
-    margin-right: 8px;
-    border: none;
-
-}
-
-.signIn {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    border: none;
-
-    background-color: #925fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-
-    font-style: normal;
-    font-size: 12px;
-    cursor: pointer;
-    display: flex;
-    text-align: center;
-
-}
-
-.latest-news {
-    width: 750px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-
-}
-
-.big-news-post {
-    height: 430px;
-    width: 745px;
-
-    background-size: cover;
-    border-radius: 6px;
-  
-}
-.big-news-content{
-    position: relative;
-    top: 320px;
-    left: 25px;
-}
-.small-news-content{
-    position: relative;
-    top: 100px;
-    left: 25px;
-}
-.author-icon{
+.author-icon {
     height: 16px;
     width: 16px;
     border-radius: 8px;
     margin-right: 6px;
 }
-.small-news-post {
-    background-size: cover;
-    width: 363px;
-    height: 205px;
-    border-radius: 6px;
-}
-.news-board{   
+
+.board-tab {
     display: flex;
-    flex-direction:  column;
-    border-radius: 6px;
-    margin-bottom: 10px;
-}
-.board-tab{
-    
-    display: flex;
-    
+
     margin-bottom: 5px;
     border-radius: 6px 3px;
     background-color: #222225;
-    
 }
-.news-board-content{
-    background-color: #222225;
-    margin-bottom: 3px;
-    padding: 8px;
-    display: flex;
-    flex-direction: column;
-}
-.matches-board-content{
-    display: flex;
-    flex-direction: column;
-   
-}
-.game-icon{
+
+.game-icon {
     height: 16px;
     width: 16px;
     border-radius: 4px;
     object-fit: cover;
     opacity: 0.7;
-    margin-right: 8px;
+    margin-right: 9px;
     margin-bottom: 10px;
-    vertical-align: text-top; 
+    vertical-align: text-top;
 }
-.tab{
+
+.tab {
     margin-right: 8px;
     padding: 8px;
     cursor: pointer;
 }
-.collapsible-button{
+
+.collapsible-button {
     background-color: #222225;
     border: none;
     border-radius: 6px;
@@ -176,26 +61,13 @@ ul {
     width: 100%;
     text-align: justify;
     cursor: pointer;
-    
-}
-.collapsible-content{
-    background-color: #222225;
-    margin-top: 1px;
-    margin-bottom: 3px;  
-   display: flex;
-   flex-direction: column;
-}
-.match-card{
-   background-color: #2f2f32; 
-   padding: 13px;
-   cursor: pointer;
-   
-   margin: 10px
-   
+
 }
 
-.tournament-card{
-   padding: 13px;
-   box-shadow: 0 4px 2px -2px #1d1d1f;
-   margin: 10px
+.collapsible-content {
+    background-color: #222225;
+    margin-top: 1px;
+    margin-bottom: 3px;
+    display: flex;
+    flex-direction: column;
 }

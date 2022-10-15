@@ -1,5 +1,7 @@
 import React from "react";
-import IconImg from './iconImg.js'
+import IconImg from './iconImg.js';
+import "./latestNews.css";
+
 function LatestNews() {
     return <div className='latest-news'>
         <BigNewsPost

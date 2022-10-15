@@ -1,0 +1,12 @@
+.matches-board-content{
+    display: flex;
+    flex-direction: column;
+
+}
+.match-card{
+    background-color: #2f2f32;
+    padding: 13px;
+    cursor: pointer;
+
+    margin: 10px
+}

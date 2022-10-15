@@ -1,6 +1,6 @@
-var IconsHashmap = new Map([
+var IconsMap = new Map([
     //Games
-    ['Valorant', "https://yt3.ggpht.com/ovpvL9DLf9eR-ZQwqrtBfFnt92_o2btElKQ-pxuE5Qx0OeuRNaRLKIMJgrL5-j_kP4QhXDWN3bY=s900-c-k-c0x00ffffff-no-rj"],
+    ['Valorant', "https://images.cults3d.com/4QqRV9kLYYEuw9ur_X3yjQl1sjk=/516x516/https://files.cults3d.com/uploaders/15024335/illustration-file/a86d53e4-2bd9-4a8f-9550-986686c3131a/gi0mAjIh_400x400.png"],
     ['CS:GO', 'https://i.pinimg.com/originals/b1/02/24/b10224ae75edd5debd06c44662cbcb30.png'],
     ['Rainbow 6', 'https://i.pinimg.com/originals/b4/d7/10/b4d710c6bc6c9009e8b88d9e2326ddec.jpg'],
     ['Dota 2', 'https://www.logolynx.com/images/logolynx/a4/a4aacddbf9fda4a28170f32fe4e26e8e.png'],
@@ -23,7 +23,7 @@ var IconsHashmap = new Map([
 ]);
 
 function IconImg(props) {
-    return <div><img className='game-icon' src={IconsHashmap.get(props.gameName)} 
+    return <div><img className='game-icon' src={IconsMap.get(props.gameName)}
     alt={props.gameName} />
     {props.gameName}</div>
 }

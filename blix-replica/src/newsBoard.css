@@ -1,15 +1,27 @@
+.news-board-content{
+    background-color: #222225;
+    margin-bottom: 3px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+.news-board{
+    display: flex;
+    flex-direction:  column;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
 .news-card-date{
-    color:#656567;
+    color:var(--secondary-text-color);
     font-size: 14px;
     font-weight: 600;
-    
+
 }
 .icon{
     vertical-align: text-top;
     
 }
 .news-card{
-    
     box-shadow: 0 4px 2px -2px #1d1d1f;
     padding: 12px;
 }

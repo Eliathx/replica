@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Tab } from "./newsBoard";
+import "./matchesBoard.css";
 
 function MatchesBoard() {
     return <div>

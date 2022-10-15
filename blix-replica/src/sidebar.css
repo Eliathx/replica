@@ -1,8 +1,6 @@
 .sidebar {
+    background-color: var(--secondary-bg-color);
     width: 240px;
-   
-
-    background-color: #222225;
     
     display: flex;
     flex-direction: column;
@@ -10,15 +8,29 @@
     position: fixed;
     left: 150px;
     top: 18px;
-    
+
+    padding-bottom: 45px;
     border-radius: 6px;
 }
 .logoBox{
     padding: 20px 20px 15px 20px;
     box-shadow: 0 4px 2px -2px #1d1d1f;
 }
+.menu{
+    padding-left: 15px;
+
+}
 .sidebar-element{
-    border-right: solid 3px #925fff;
+
     cursor: pointer;
+    font-size:14px;
     padding: 6px;
+}
+.right-border{
+    border-right: solid 3px #925fff;
+}
+.games-menu{
+    overflow-y: scroll;
+    max-height: 300px;
+
 }

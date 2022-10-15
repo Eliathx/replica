@@ -1,0 +1,31 @@
+.latest-news {
+    width: 750px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+.big-news-post {
+    height: 430px;
+    width: 745px;
+
+    background-size: cover;
+    border-radius: 6px;
+
+}
+.big-news-content{
+    position: relative;
+    top: 320px;
+    left: 25px;
+}
+.small-news-post {
+    background-size: cover;
+    width: 363px;
+    height: 205px;
+    border-radius: 6px;
+}
+.small-news-content{
+    position: relative;
+    top: 100px;
+    left: 25px;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import { Tab } from "./newsBoard.js"
 import {InnerViewMoreButton} from "./content.js"
+import "./tournamentsBoard.css";
+
 function TournamentsBoard() {
     return <div>
         <div className="board-tab">
