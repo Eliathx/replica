@@ -61,34 +61,34 @@ function SideBar() {
                 NEWS BY GAMES
             </div>
             <ul className='menu games-menu'>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName='CS:GO'/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName='Valorant'/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName='Dota 2'/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName='League of Legends'/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName='Rainbow 6'/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName="Industry"/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName='Rocket League'/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName="Free Fire"/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName="GWENT"/>
                 </li>
-                <li className='sidebar-element'>
+                <li className='sidebar-element highlight-on-hover'>
                     <IconImg gameName="Games"/>
                 </li>
             </ul>

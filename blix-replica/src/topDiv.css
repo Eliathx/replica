@@ -23,7 +23,11 @@
 
     background: linear-gradient(270deg, rgba(22, 22, 24, 1) 0%, rgba(22, 22, 24, 1) 35%, rgba(0, 212, 255, 0) 100%);;
 }
-
+.started-text{
+    color:var(--secondary-text-color);
+    font-size: 13px;
+    font-weight: 600;
+}
 .current-match-card {
     cursor: pointer;
     background-color: #222225;
