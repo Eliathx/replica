@@ -12,10 +12,10 @@ function NewsBoard() {
         </div>
 
         <div className="news-board-content">
-            <NewsCard title="lorem ipsum 1" date="9 Oct, 08:17" />
-            <NewsCard title="Title test2" date="7 Oct, 18:03" />
-            <NewsCard title="Title test3" date="7 Oct, 09:36" />
-            <NewsCard title="Title test4" date="6 Oct, 12:43" />
+            <NewsCard  title="Williams Resolve announces Rocket League roster changes" date="9 Oct, 08:17" />
+            <NewsCard title="Sources: Sacy and pANcada joined Sentinel's roster" date="7 Oct, 18:03" />
+            <NewsCard title="Worlds 2022 will be the event with most world champions so far" date="7 Oct, 09:36" />
+            <NewsCard title="Title test3 Lorem ipsum dolor sit amet, consectetur adip" date="6 Oct, 12:43" />
             <NewsCard title="Title test4" date="3 Oct, 22:07" />
             <InnerViewMoreButton section="all News" />
         </div>

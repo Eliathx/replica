@@ -8,6 +8,9 @@
     flex-direction: column;
 }
 .view-more-button {
+    display: flex;
+    justify-content: center;
+
     background-color: var(--secondary-bg-color);
     transition:0.35s;
     border: none;
@@ -17,7 +20,8 @@
 }
 
 .inner-view-more-button {
-
+    display: flex;
+    justify-content: center;
 
     background-color: var(--tertiary-bg-color);
     transition:0.35s;

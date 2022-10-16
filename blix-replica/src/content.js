@@ -8,12 +8,10 @@ import {SVGIcon} from "./iconImg";
 
 function ViewMoreButton(props) {
     return <button className='view-more-button highlight-on-hover'>
-        <SVGIcon page="View-more"/>
-        ⠀View {props.section}</button>
+        <SVGIcon page="View-more"/>View {props.section}</button>
 }
 
 function InnerViewMoreButton(props) {
-
     return <button className='inner-view-more-button highlight-inner-on-hover'>
         <SVGIcon page="View-more"/>View {props.section}</button>
 }
