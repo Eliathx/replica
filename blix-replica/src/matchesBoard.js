@@ -5,8 +5,8 @@ import "./matchesBoard.css";
 function MatchesBoard() {
     return <div>
 
-        <div className="board-tab">
-            <Tab page="Live" />
+        <div className="board-tab-menu">
+            <Tab page="Live" state="selected-bottom-border"/>
             <Tab page="Upcoming" />
             <Tab page="Finished" />
         </div>

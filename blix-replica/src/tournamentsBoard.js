@@ -5,7 +5,7 @@ import "./tournamentsBoard.css";
 
 function TournamentsBoard() {
     return <div>
-        <div className="board-tab">
+        <div className="board-tab-menu">
             <Tab page="Tournaments" />
             
         </div>

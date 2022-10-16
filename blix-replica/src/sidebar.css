@@ -35,14 +35,12 @@
 .news-by-games{
     padding-left: 20px;
     color:var(--secondary-text-color);
+
     font-size:12px;
     font-weight:800;
 }
-.sidebar-element:hover {
-    background-color: #29292c;
-}
 
-.selected{
+.selected-right-border{
     border-right: solid 3px var(--logo-color);
     background-color: var(--tertiary-bg-color);
 }

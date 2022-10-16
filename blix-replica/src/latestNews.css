@@ -6,12 +6,18 @@
 }
 
 .big-news-post {
+    transition: 0.15s;
+    align-items: center;
+
+
     height: 430px;
     width: 745px;
 
     background-size: cover;
     border-radius: 6px;
 }
+
+
 
 .big-news-content {
     position: relative;
@@ -23,6 +29,9 @@
 
     width: 720px;
 }
+.big-news-title {
+    font-size: 21px;
+}
 .big-news-date{
     position: absolute;
     right: 10px;
@@ -32,8 +41,14 @@
     background-size: cover;
     border-radius: 6px;
 
+    transition: 0.15s;
+
     width: 363px;
     height: 205px;
+}
+.small-news-date{
+    position: absolute;
+    right: 10px;
 }
 
 .small-news-content {
@@ -51,6 +66,7 @@
 .small-news-title {
     font-size: 16px;
 }
-.big-news-title {
-    font-size: 21px;
+
+.highlight-news:hover {
+    box-shadow: 0 0 2px 2px var(--tertiary-bg-color);
 }

@@ -1,12 +1,13 @@
 import React from "react";
 import { InnerViewMoreButton } from "./content";
 import './newsBoard.css'
+import {SVGIcon} from "./iconImg";
 
 function NewsBoard() {
     return <div className="news-board">
 
-        <div className="board-tab">
-            <Tab page="Latest News" />
+        <div className="board-tab-menu" >
+            <Tab page="Latest News" state="selected-bottom-border"/>
             <Tab page="Breaking News" />
         </div>
 
@@ -29,7 +30,9 @@ function NewsCard(props) {
     </div>
 }
 function Tab(props) {
-    return <div className="tab">{props.page}</div>
+    return <div className={`tab ${props.state}`}>
+        <SVGIcon page={props.page}/>
+        {props.page}</div>
 }
 export default NewsBoard
 export { Tab }
