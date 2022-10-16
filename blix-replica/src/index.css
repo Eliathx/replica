@@ -1,20 +1,28 @@
 :root {
     --primary-bg-color: #161618;
     --secondary-bg-color: #222225;
+    --tertiary-bg-color: #2f2f32;
 
-    --primary-text-color: white;
+
+    --primary-text-color: #e8e2ec;
     --secondary-text-color: #656567;
+
+    --logo-color: #925fff;
 }
 
 body {
     background-color: var(--primary-bg-color);
 }
+*:not(a):not(h2):not(h3) {
+    font-size: 13px;
+
+}
 
 * {
     font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: 13px;
-    color: white;
+
+    color: var(--primary-text-color);
 }
 
 ul {
@@ -33,7 +41,7 @@ ul {
 
     margin-bottom: 5px;
     border-radius: 6px 3px;
-    background-color: #222225;
+    background-color: var(--secondary-bg-color);
 }
 
 .game-icon {
@@ -43,7 +51,7 @@ ul {
     object-fit: cover;
     opacity: 0.7;
     margin-right: 9px;
-    margin-bottom: 10px;
+
     vertical-align: text-top;
 }
 
@@ -54,7 +62,7 @@ ul {
 }
 
 .collapsible-button {
-    background-color: #222225;
+    background-color: var(--secondary-bg-color);
     border: none;
     border-radius: 6px;
     padding: 8px;
@@ -65,7 +73,7 @@ ul {
 }
 
 .collapsible-content {
-    background-color: #222225;
+    background-color: var(--secondary-bg-color);
     margin-top: 1px;
     margin-bottom: 3px;
     display: flex;

@@ -4,7 +4,7 @@
 
 }
 .match-card{
-    background-color: #2f2f32;
+    background-color: var(--tertiary-bg-color);
     padding: 13px;
     cursor: pointer;
 

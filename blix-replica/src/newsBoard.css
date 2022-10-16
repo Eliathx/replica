@@ -1,5 +1,5 @@
 .news-board-content{
-    background-color: #222225;
+    background-color: var(--secondary-bg-color);
     margin-bottom: 3px;
     padding: 8px;
     display: flex;

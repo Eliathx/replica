@@ -21,16 +21,33 @@
 
 }
 .sidebar-element{
-
     cursor: pointer;
-    font-size:14px;
-    padding: 6px;
+
+    padding: 10px;
+    border-radius:6px 0 0 6px;
+
+    margin-bottom:2px;
+
+    display: flex;
+    align-items: center;
+
 }
-.right-border{
-    border-right: solid 3px #925fff;
+.news-by-games{
+    padding-left: 20px;
+    color:var(--secondary-text-color);
+    font-size:12px;
+    font-weight:800;
+}
+.sidebar-element:hover {
+    background-color: #29292c;
+}
+
+.selected{
+    border-right: solid 3px var(--logo-color);
+    background-color: var(--tertiary-bg-color);
 }
 .games-menu{
     overflow-y: scroll;
-    max-height: 300px;
-
+    height: 305px;
+    margin-top:20px;
 }

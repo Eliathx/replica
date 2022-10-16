@@ -15,7 +15,7 @@ function TournamentsBoard() {
                <TournamentCard name="GC" status="Ongoing" date="Until 11 Oct"/>
                <TournamentCard name="GC" status="Ongoing" date="Until 11 Oct"/>
                <TournamentCard name="Worlds" status="Ongoing" date="Until 09 Oct"/>
-                <InnerViewMoreButton section="all News" />
+                <InnerViewMoreButton section="all Tournaments" />
             </div>
     </div>
 }

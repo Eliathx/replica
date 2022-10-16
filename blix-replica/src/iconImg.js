@@ -23,8 +23,8 @@ var IconsMap = new Map([
 ]);
 
 function IconImg(props) {
-    return <div><img className='game-icon' src={IconsMap.get(props.gameName)}
-    alt={props.gameName} />
+    return <div ><img className='game-icon' src={IconsMap.get(props.gameName)}
+    alt={props.gameName}/>
     {props.gameName}</div>
 }
 
