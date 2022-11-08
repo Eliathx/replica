@@ -1,5 +1,5 @@
 import React from "react";
-import IconImg from './iconImg.js'
+import IconImgWithText from './iconImgWithText.js'
 import "./topDiv.css";
 
 function CurrentMatchesBar() {
@@ -13,12 +13,12 @@ function CurrentMatchesBar() {
 }
 
 function CurrentMatchCard(props){
-    return <div className='current-match-card'><IconImg gameName={props.team1}/>
+    return <div className='current-match-card'><IconImgWithText gameName={props.team1}/>
         <svg style={{marginLeft:9}} className="game-icon" width="13" height="8" viewBox="0 0 13 8" xmlns="http://www.w3.org/2000/svg">
             <path fill="#7a7a7c"
                   d="M7.09398 1.082L3.41998 7H1.64898L0.339984 1.082H2.03398L2.89198 5.119L5.37798 1.082H7.09398ZM8.68727 7.088C8.17393 7.088 7.68627 7.033 7.22427 6.923C6.7696 6.80567 6.41393 6.65533 6.15727 6.472L6.81727 5.229C7.07393 5.39767 7.3856 5.53333 7.75227 5.636C8.12627 5.73867 8.50027 5.79 8.87427 5.79C9.26293 5.79 9.5526 5.74233 9.74327 5.647C9.93393 5.54433 10.0293 5.40133 10.0293 5.218C10.0293 5.07133 9.94493 4.965 9.77627 4.899C9.6076 4.833 9.33627 4.76333 8.96227 4.69C8.53693 4.60933 8.18493 4.52133 7.90627 4.426C7.63493 4.33067 7.3966 4.17667 7.19127 3.964C6.99327 3.744 6.89427 3.447 6.89427 3.073C6.89427 2.42033 7.1656 1.91067 7.70827 1.544C8.25827 1.17733 8.97693 0.994 9.86427 0.994C10.2749 0.994 10.6746 1.038 11.0633 1.126C11.4519 1.214 11.7819 1.335 12.0533 1.489L11.4373 2.743C10.9533 2.44233 10.3703 2.292 9.68827 2.292C9.31427 2.292 9.02827 2.347 8.83027 2.457C8.6396 2.567 8.54427 2.70633 8.54427 2.875C8.54427 3.029 8.6286 3.14267 8.79727 3.216C8.96593 3.282 9.24827 3.35533 9.64427 3.436C10.0623 3.51667 10.4033 3.60467 10.6673 3.7C10.9386 3.788 11.1733 3.93833 11.3713 4.151C11.5693 4.36367 11.6683 4.65333 11.6683 5.02C11.6683 5.68 11.3896 6.18967 10.8323 6.549C10.2823 6.90833 9.56727 7.088 8.68727 7.088Z"></path>
         </svg>
-    <IconImg gameName={props.team2} />&nbsp;<span className='started-text'>started</span></div>
+    <IconImgWithText gameName={props.team2} />&nbsp;<span className='started-text'>started</span></div>
 }
 
 function TopDiv() {

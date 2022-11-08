@@ -1,5 +1,5 @@
 import React from "react";
-import IconImg from './iconImg.js';
+import IconImgWithText from './iconImgWithText.js';
 import "./latestNews.css";
 
 function LatestNews() {
@@ -33,7 +33,7 @@ function BigNewsPost(props) {
     }}>
 
         <div className="big-news-content">
-            <IconImg gameName={props.game}/> <a className="big-news-title">{props.title}</a><br/>
+            <IconImgWithText gameName={props.game}/> <a className="big-news-title">{props.title}</a><br/>
             <img className="author-icon icon"
                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"/><a>{props.author}</a>
             <a className="big-news-date">
@@ -53,7 +53,7 @@ function SmallerNewsPost(props) {
         backgroundImage: `${toBottomBlackGradient}, url(${props.imgsrc})`
     }}>
         <div className="small-news-content">
-            <IconImg gameName={props.game}/> <a className="small-news-title">
+            <IconImgWithText gameName={props.game}/> <a className="small-news-title">
              {props.title}</a><br/>
             <img className="author-icon icon"
                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"/><span>{props.author}</span>

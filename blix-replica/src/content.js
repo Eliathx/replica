@@ -4,7 +4,7 @@ import NewsBoard from "./newsBoard";
 import MatchesBoard from "./matchesBoard";
 import TournamentsBoard from "./tournamentsBoard";
 import "./content.css";
-import {SVGIcon} from "./iconImg";
+import {SVGIcon} from "./iconImgWithText";
 
 function ViewMoreButton(props) {
     return <button className='view-more-button highlight-on-hover'>

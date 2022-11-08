@@ -69,16 +69,22 @@ const SVGIconsMap = new Map([
 
 ]);
 
-function IconImg(props) {
-    return <div><img className='game-icon' src={IconsMap.get(props.gameName)}
-                     alt={props.gameName}/>
-        {props.gameName}</div>
-}
+function IconImgWithText(props) {
 
+    return <div><img className='game-icon' src={IconsMap.get(props.gameName)}
+                     alt={props.gameName}/><a>{props.gameName}</a>
+        </div>
+}
+function IconImg(props) {
+
+    return <div>
+        <img className='game-icon' src={IconsMap.get(props.gameName)} alt={props.gameName}/>
+    </div>
+}
 function SVGIcon(props) {
     //TODO: Find a better (and safer) way to do this instead of dangerouslySetInnerHTML.
     return <div dangerouslySetInnerHTML={{__html: SVGIconsMap.get(props.page)}}></div>
 }
 
-export default IconImg;
-export {SVGIcon};
+export default IconImgWithText;
+export {SVGIcon, IconImg};

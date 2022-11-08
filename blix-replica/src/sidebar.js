@@ -1,7 +1,7 @@
 import React from "react";
 import './sidebar.css'
-import IconImg from './iconImg.js'
-import {SVGIcon} from "./iconImg.js";
+import IconImgWithText from './iconImgWithText.js'
+import {SVGIcon} from "./iconImgWithText.js";
 
 function SideBar() {
 
@@ -10,7 +10,7 @@ function SideBar() {
 
         <div className='logoBox'>
             <svg width="80" height="20" viewBox="0 0 80 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                 data-v-5576b570="" class="">
+                 data-v-5576b570="" className="">
                 <path d="M29.5393 0.596205C29.5393 0.26693 29.2724 0 28.9431
             0H26.2067C23.6132 7.53759e-07 21.5107 2.10291 21.5107 4.69697C21.5107 7.29104 23.6132 9.39394 26.2067 
             9.39394L28.9431 9.39394C29.2724 9.39394 29.5393 9.12701 29.5393 8.79773V0.596205Z" fill="#7A3CFF"
@@ -62,34 +62,34 @@ function SideBar() {
             </div>
             <ul className='menu games-menu'>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName='CS:GO'/>
+                    <IconImgWithText gameName='CS:GO'/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName='Valorant'/>
+                    <IconImgWithText gameName='Valorant'/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName='Dota 2'/>
+                    <IconImgWithText gameName='Dota 2'/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName='League of Legends'/>
+                    <IconImgWithText gameName='League of Legends'/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName='Rainbow 6'/>
+                    <IconImgWithText gameName='Rainbow 6'/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName="Industry"/>
+                    <IconImgWithText gameName="Industry"/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName='Rocket League'/>
+                    <IconImgWithText gameName='Rocket League'/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName="Free Fire"/>
+                    <IconImgWithText gameName="Free Fire"/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName="GWENT"/>
+                    <IconImgWithText gameName="GWENT"/>
                 </li>
                 <li className='sidebar-element highlight-on-hover'>
-                    <IconImg gameName="Games"/>
+                    <IconImgWithText gameName="Games"/>
                 </li>
             </ul>
         </div>
