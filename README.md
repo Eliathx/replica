@@ -6,6 +6,8 @@ This repository is dedicated to showcase replicas/copies of other work made by m
 <h3>Games 🕹</h3> 
 <ul>
   <li><a href="https://github.com/Eliathx/replica/tree/main/minesweeper" target="_top">Minesweeper</a></li>
+  <li><a href="https://github.com/Eliathx/replica/tree/main/tic-tac-toe" target="_top">Tic Tac Toe</a></li>
+
 </ul>
 
 <h3>Website mockups🌐 </h3>
