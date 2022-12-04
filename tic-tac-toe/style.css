@@ -1,0 +1,22 @@
+body{
+    background-color: #111111;
+    color: white;
+    opacity: 0.81;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 7vw);
+    background-color: #474747;
+    width: 21vw;
+    height: 21vw;
+}
+.tile{
+    width: 7vw;
+    height: 7vw;
+    background-color: #3a3a3a;
+    border: solid 1px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+
+}
